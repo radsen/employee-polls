@@ -1,48 +1,40 @@
-import { useState } from "react";
-
-import "./login.css";
-
-const Login = () => {
-    const [name, setName] = useState("");
+const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmation, setConfirmation] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
     };
 
-    return(
-        <div className="login">
+    return (
+        <div>
             <form className="login-form" onSubmit={ (e) => handleSubmit(e) }>
                 <h1>Login</h1>
                 <input
-                    type="name"
-                    placeholder="Name"
-                    value={ name }
-                    onChange={ (e) => setName(e.target.value) }
-                />
-                <input
                     type="email"
-                    placeholder="E-mail"
+                    placeholder="Enter your E-mail"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
                 />
                 <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Type new password"
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
+                />
+                <input
+                    type="password"
+                    placeholder="Confirm new password"
+                    value={ confirmation }
+                    onChange={ (e) => setConfirmation(e.target.value) }
                 />
                 <button type="submit" className="submit-btn">
                     Submit
                 </button>
-                <div className="login-extras">
-                    <a href="#" className="forgot-password">Forgot password</a>
-                    <a href="#" className="signup">Sign Up</a>
-                </div>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default ForgotPassword;
