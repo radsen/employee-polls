@@ -1,9 +1,10 @@
-import { useState } from "react";
-
 import "./login.css";
 
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
+
 const Login = () => {
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -12,15 +13,9 @@ const Login = () => {
     };
 
     return(
-        <div className="login">
-            <form className="login-form" onSubmit={ (e) => handleSubmit(e) }>
+        <div className="auth">
+            <form className="auth-form" onSubmit={ (e) => handleSubmit(e) }>
                 <h1>Login</h1>
-                <input
-                    type="name"
-                    placeholder="Name"
-                    value={ name }
-                    onChange={ (e) => setName(e.target.value) }
-                />
                 <input
                     type="email"
                     placeholder="E-mail"
@@ -33,12 +28,12 @@ const Login = () => {
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
                 />
-                <button type="submit" className="submit-btn">
+                <button type="submit" className="auth-submit-btn">
                     Submit
                 </button>
-                <div className="login-extras">
-                    <a href="#" className="forgot-password">Forgot password</a>
-                    <a href="#" className="signup">Sign Up</a>
+                <div className="auth-extras">
+                    <Link to="forgot" className="forgot-password">Forgot password</Link>
+                    <Link to="signup" className="signup">Sign Up</Link>
                 </div>
             </form>
         </div>

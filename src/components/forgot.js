@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -8,9 +10,9 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div>
-            <form className="login-form" onSubmit={ (e) => handleSubmit(e) }>
-                <h1>Login</h1>
+        <div className="auth">
+            <form className="auth-form" onSubmit={ (e) => handleSubmit(e) }>
+                <h1>Forgot Password</h1>
                 <input
                     type="email"
                     placeholder="Enter your E-mail"
@@ -29,7 +31,7 @@ const ForgotPassword = () => {
                     value={ confirmation }
                     onChange={ (e) => setConfirmation(e.target.value) }
                 />
-                <button type="submit" className="submit-btn">
+                <button type="submit" className="auth-submit-btn">
                     Submit
                 </button>
             </form>
