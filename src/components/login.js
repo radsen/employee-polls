@@ -1,15 +1,18 @@
 import "./login.css";
 
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { login } from "../actions/login";
 
 const Login = () => {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(login({email: email, password: password}));
     };
 
     return(

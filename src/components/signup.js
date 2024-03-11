@@ -15,30 +15,34 @@ const SignUp = () => {
             <form className="auth-form" onSubmit={ (e) => handleSubmit(e) }>
                 <h1>Sign Up</h1>
                 <input
+                    id="name"
                     type="name"
                     placeholder="Enter your Name"
                     value={ name }
                     onChange={ (e) => setName(e.target.value) }
                 />
                 <input
+                    id="email"
                     type="email"
                     placeholder="Enter your E-mail"
                     value={ email }
                     onChange={ (e) => setEmail(e.target.value) }
                 />
                 <input
+                    id="password"
                     type="password"
                     placeholder="Type password"
                     value={ password }
                     onChange={ (e) => setPassword(e.target.value) }
                 />
                 <input
-                    type="confirmation"
+                    id="confirmation"
+                    type="password"
                     placeholder="Confirm password"
                     value={ confirmation }
                     onChange={ (e) => setConfirmation(e.target.value) }
                 />
-                <button type="submit" className="auth-submit-btn">
+                <button id="signUpBtn" type="submit" className="auth-submit-btn">
                     Submit
                 </button>
             </form>
